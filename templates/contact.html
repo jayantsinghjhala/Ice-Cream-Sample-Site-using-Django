@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}
+  Contact Us
+{% endblock %}
+{% block body %}
+  <div class="container-fluid px-0 justify-content-center position-relative">
+    <img src="static/images/contact.jpg" class="opacity-75 d-block w-100 mx-0" height="400" alt="https://www.freepik.com/free-vector/flat-ice-cream-collection_14835391.htm" />
+    <h3 class="m-1 px-3 py-1 fw-bold text-white position-absolute start-50 translate-middle" style="
+     top: 88px;
+     font-size: 55px;
+     background-color: lightslategray;
+ 
+ ">Contact Us</h3>
+  </div>
+  <div class="container mt-4 d-flex justify-content-center align-items-center" style="min-height: 70vh;">
+     <form class="w-75" method="POST" action="/contact">
+     {% csrf_token %}
+       <div class="form-group mb-4">
+         <label for="name" class="form-label">Name</label>
+         <input class="form-control" name="name" id="name" type="text" placeholder="Enter Your Name" aria-label="default input name" />
+       </div>
+       <div class="form-group mb-4">
+         <label for="email" class="form-label">Email Address</label>
+         <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter Your Email" />
+       </div>
+       <div class="form-group mb-4">
+         <label for="phone" class="form-label">Mobile Number</label>
+         <input type="phone" class="form-control" name="phone" id="phone" aria-describedby="emailHelp" placeholder="Enter Your Mobile Number" />
+       </div>
+       <div class="form-group mb-4">
+         <label class="form-label" for="desc">Reason for Contact</label>
+         <textarea class="form-control" name="desc" id="desc" placeholder="Write a Brief Description of your Concern!"></textarea>
+       </div>
+       <button type="submit" class="btn btn-primary">Submit</button>
+     </form>
+   </div>
+{% endblock %}
